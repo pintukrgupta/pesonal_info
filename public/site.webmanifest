@@ -1,0 +1,12 @@
+{
+  "name": "Pintu Kumar Gupta — Backend Engineer",
+  "short_name": "PK Portfolio",
+  "description": "Java Backend Engineer — Spring Boot, Kafka, Flink, Microservices",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#09090b",
+  "icons": [
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any" }
+  ]
+}

@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 27% 98%;
+    --foreground: 220 10% 12%;
+    --card: 40 23% 95%;
+    --card-foreground: 220 10% 12%;
+    --primary: 220 61% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 45 10% 90%;
+    --secondary-foreground: 222 6% 35%;
+    --muted: 45 10% 92%;
+    --muted-foreground: 222 6% 35%;
+    --accent: 220 61% 40%;
+    --accent-foreground: 0 0% 100%;
+    --copper: 30 54% 54%;
+    --copper-foreground: 220 10% 12%;
+    --border: 45 10% 85%;
+    --input: 45 10% 85%;
+    --ring: 220 61% 40%;
+    --radius: 0.625rem;
+  }
+
+  .dark {
+    --background: 215 36% 9%;
+    --foreground: 210 21% 95%;
+    --card: 217 34% 12%;
+    --card-foreground: 210 21% 95%;
+    --primary: 216 65% 66%;
+    --primary-foreground: 215 36% 9%;
+    --secondary: 215 31% 18%;
+    --secondary-foreground: 217 12% 70%;
+    --muted: 215 31% 16%;
+    --muted-foreground: 217 12% 70%;
+    --accent: 216 65% 66%;
+    --accent-foreground: 215 36% 9%;
+    --copper: 30 54% 60%;
+    --copper-foreground: 215 36% 9%;
+    --border: 215 31% 25%;
+    --input: 215 31% 25%;
+    --ring: 216 65% 66%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.6);
+  }
+
+  /* Selection */
+  ::selection {
+    background: hsl(var(--primary) / 0.2);
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer utilities {
+  /* Accent word in headings — solid, not gradient */
+  .gradient-text {
+    @apply text-primary;
+  }
+
+  /* Section container */
+  .section-container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Section padding */
+  .section-padding {
+    @apply py-20 md:py-28;
+  }
+
+  /* Section heading label */
+  .section-label {
+    @apply text-xs font-mono uppercase tracking-[0.2em] text-primary;
+  }
+
+  /* Card — flat, hairline border, no transparency tricks */
+  .card-base {
+    @apply rounded-[var(--radius)] border border-border bg-card p-6 transition-colors duration-200;
+  }
+
+  .card-hover {
+    @apply hover:border-primary/40;
+  }
+
+  /* Neutral mono chip — for tech/tool labels */
+  .code-text {
+    @apply font-mono text-sm bg-muted px-2 py-0.5 rounded text-foreground;
+  }
+
+  /* Grid background — a quiet texture, not a statement */
+  .bg-grid {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
+    background-size: 4rem 4rem;
+  }
+
+  .dark .bg-grid {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 4rem 4rem;
+  }
+
+  /* Status dots */
+  .status-dot {
+    @apply w-2 h-2 rounded-full;
+  }
+}
+
+/* Progress bar animation */
+@keyframes progressFill {
+  from {
+    width: 0%;
+  }
+}
+
+.progress-bar {
+  animation: progressFill 1s ease-out forwards;
+}
+
+/* Typewriter cursor */
+.typewriter-cursor::after {
+  content: "|";
+  animation: blink 1s infinite;
+  color: hsl(var(--primary));
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Timeline line */
+.timeline-line {
+  background: linear-gradient(to bottom, transparent, hsl(var(--border)), transparent);
+}
