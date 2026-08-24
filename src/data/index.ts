@@ -317,6 +317,7 @@ export const certifications = [
     textColor: "text-red-400",
     bgIcon: "from-red-600 to-orange-600",
     skills: ["AI Fundamentals", "Oracle Cloud", "Machine Learning Concepts"],
+    url: "https://www.linkedin.com/posts/pintukgupta_ai-machinelearning-generativeai-share-7393000703037861889-15Dv/",
   },
   {
     id: "oci-gen-ai",
@@ -330,6 +331,7 @@ export const certifications = [
     textColor: "text-orange-400",
     bgIcon: "from-orange-600 to-amber-600",
     skills: ["Generative AI", "LLM APIs", "RAG", "Prompt Engineering"],
+    url: "https://drive.google.com/file/d/1ugP1UsCoGBjIt82jFG9HhoM3X9ypdBH3/view",
   },
   {
     id: "python-coursera",

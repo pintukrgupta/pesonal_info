@@ -69,13 +69,13 @@ export function Journey() {
                   custom={index * 0.08}
                   className={cn(
                     "relative flex items-center gap-4",
-                    "md:gap-0",
+                    "md:gap-0 md:justify-between",
                     isLeft ? "md:flex-row" : "md:flex-row-reverse"
                   )}
                 >
                   <div
                     className={cn(
-                      "flex-1 md:w-5/12",
+                      "flex-1 md:flex-none md:w-5/12",
                       isLeft ? "md:pr-10 md:text-right" : "md:pl-10 md:text-left",
                       "pl-10 md:pl-0"
                     )}
